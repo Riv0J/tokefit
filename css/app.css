@@ -28,6 +28,9 @@
 html {
     scroll-behavior: smooth;
 }
+main{
+    position: relative;
+}
 body, header, #responsive-nav{
     background-color: var(--color-bg-dark);
 }
@@ -164,6 +167,7 @@ h1{
 h2{
     letter-spacing: 0.05rem;
     font-size: 1.75rem;
+    text-align: center;
 }
 i{
     display: block;
@@ -204,6 +208,13 @@ i{
 .icon-tiktok {
     mask-image: url('../icons/tiktok.webp');
     -webkit-mask-image: url('../icons/tiktok.webp');
+}
+.icon-whatsapp{
+    background-color: white;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    mask-image: url('../icons/ws.webp');
+    -webkit-mask-image: url('../icons/ws.webp');
 }
 .anchor-brand, .brand-font{
     color: var(--color-brand);
@@ -327,6 +338,9 @@ i{
     padding: 1rem;
     text-align: center;
 }
+#clientes-section p{
+    font-weight: 300;
+}
 #clientes-section p, #hablemos p{
     width: 70%;
     text-align: center;
@@ -427,4 +441,16 @@ i{
 }
 #hablemos p{
     font-weight: 300;
+}
+
+@media screen and (min-width: 1200px){
+    #about{
+        height: auto;
+    }
+    section{
+        width: 80%;
+    }
+    #clientes{
+        width: 50%;
+    }
 }
