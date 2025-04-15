@@ -90,8 +90,8 @@ video, img{
 }
 #video-muted{
     position: absolute;
-    width: 30%;
-    top: 78%;
+    width: 35%;
+    top: 50%;
     left: 50%;
     translate: -50% -50%;
     background-color: rgba(128, 128, 128, 0.529);
@@ -103,6 +103,8 @@ video, img{
     align-items: center;
     animation: 1s bounce ease-in-out  alternate infinite;
     pointer-events: none;
+    font-size: 1.25rem;
+    gap: 0.5rem;
 }
 #video-muted img{
     width: 60%;
@@ -274,7 +276,7 @@ i{
     margin-inline: 2rem;
 }
 #clientes-headers, .cliente{
-    margin-top: 3rem;
+    margin-top: 4rem;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -282,7 +284,7 @@ i{
 }
 .cliente{
     display: inline-flex;
-    align-items: center;
+    align-items: stretch;
     gap: 1rem;
     opacity: 0;
 }
@@ -294,6 +296,7 @@ i{
 }
 #pat article:nth-of-type(1){
     background-color: rgb(67, 67, 67);
+    border-bottom: var(--border-secondary);
     padding-block: 1rem;
 }
 #pat article:nth-of-type(2){
@@ -312,7 +315,7 @@ i{
     width: 15%;
     background: linear-gradient(90deg,rgb(67, 67, 67) 0%, rgb(67, 67, 67) 30%, rgba(67, 67, 67, 0) 100%);
     z-index: 999;
-    transform: scaleY(1.01);
+    transform: scaleY(1.03);
 }
 .pat-img:first-of-type::after{
     right: 0;
@@ -336,4 +339,18 @@ i{
     box-shadow: 0px 0px 10px 5px var(--color-backdrop);
     color: black;
     font-weight: 500;
+}
+.slide {
+    animation: 2s slide forwards;
+}
+.slide-reverse {
+    animation: 2s slide-reverse forwards;
+}
+@keyframes slide {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+@keyframes slide-reverse {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
 }
