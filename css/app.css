@@ -68,12 +68,15 @@ button{
     background-color: var(--color-secondary);
     z-index: 999;
 }
-section, footer{
+section:not(:first-of-type), footer{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 4rem;
+}
+section:first-of-type{
+    margin-top: 2rem;
 }
 footer{
     position: relative;
@@ -260,7 +263,6 @@ i{
     font-size: 1.25rem;
     letter-spacing: 0.05rem;
     padding: 1.5rem;
-    padding-block: 1.5rem;
     transition: all 0.2s;
     padding-left: 3rem;
 }
@@ -289,6 +291,9 @@ i{
 }
 .button-cta:hover{
     box-shadow: 0px 0px 20px 3px var(--color-brand);
+}
+section .button-cta{
+    font-size: 1.5rem;
 }
 .flex-center{
     display: flex;
@@ -442,15 +447,52 @@ i{
 #hablemos p{
     font-weight: 300;
 }
-
+#whats i{
+    width: 1.5rem;
+}
+#whats{
+    font-size: 1.5rem;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: inline-flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    padding-inline: 1rem;
+    border-radius: 2rem;
+    z-index: 1000;
+}
 @media screen and (min-width: 1200px){
-    #about{
+    #about, #hablemos{
         height: auto;
+        width: 60%;
     }
     section{
         width: 80%;
     }
     #clientes{
         width: 50%;
+    }
+    header{
+        width: 100%;
+    }
+    #responsive-menu{
+        display: none;
+    }
+    #responsive-nav{
+        height: auto;
+        top: 8%;
+        left: 20%;
+        flex-direction: row;
+        justify-content: flex-end;
+        background-color: transparent;
+        width: auto;
+    }
+    #responsive-nav a{
+        font-size: 1rem;
+        padding-left: 1.5rem;
+    }
+    #responsive-nav a::after,  #responsive-nav::after {
+        width: 0 !important;
     }
 }

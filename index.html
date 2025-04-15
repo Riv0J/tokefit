@@ -14,7 +14,6 @@
             <a class="anchor-brand" href="tokefit.com">Toke<span>fit</span></a>
             <button id="responsive-menu"><i class="icon-menu"></i></button>
         </div>
-
         <nav id="responsive-nav">
             <a href="#about">Mi historia</a>
             <a href="#clientes">Mis clientes</a>
@@ -23,10 +22,6 @@
         </nav>
     </header>
     <main class="flex-center">
-        <a id="whats" class="button-cta" href="https://wa.pe/tokefit" target="_blank">
-            <i class="icon-mask icon-whatsapp"></i>
-            Hablemos
-        </a>
         <section>
             <h1>TE AYUDO A PERDER GRASA Y PONERTE FUERTE</h1>
             <div class="video-wrapper">
@@ -132,23 +127,10 @@
             <a class="button-cta" href="https://calendly.com/tornikefit/45min" target="_blank">RECLAMA tu reunión GRATUITA</a>
         </section>
 
-        <style>
-            #whats i{
-                width: 1.5rem;
-            }
-            #whats{
-                font-size: 1.5rem;
-                position: fixed;
-                bottom: 5%;
-                right: 5%;
-                display: inline-flex;
-                gap: 0.5rem;
-                padding: 0.5rem;
-                padding-inline: 1rem;
-                border-radius: 2rem;
-                z-index: 1000;
-            }
-        </style>
+        <a id="whats" class="button-cta" href="https://wa.pe/tokefit" target="_blank">
+            <i class="icon-mask icon-whatsapp"></i>
+            Hablemos
+        </a>
     </main>
     <footer>
         <a href="https://www.instagram.com/tokefit" target="_blank">
@@ -166,7 +148,7 @@
     </footer>
 </body>
 <script>
-    const offset = 100; // por ejemplo, subir 100px
+    const offset = 100;
 
     document.querySelectorAll('#responsive-nav a').forEach(link => {
         link.addEventListener('click', function (e) {
@@ -180,11 +162,12 @@
             top: targetPosition - offset,
             behavior: 'smooth'
             });
-
-            // Cerrar el nav
-            setTimeout(() => {
-            document.querySelector('#responsive-nav').style.height = '0px';
-            }, 300);
+            
+            if(document.querySelector('#responsive-menu').style.display !== ""){
+                setTimeout(() => {
+                document.querySelector('#responsive-nav').style.height = '0px';
+                }, 300);
+            }
         });
     });
 
