@@ -6,7 +6,7 @@
     --color-bg-gray: #282828;
     --color-backdrop: #c1c1c1b8;
     --gradient: linear-gradient(45deg,rgb(60, 120, 60) 0%, rgba(22, 148, 19, 1) 50%, rgb(37, 175, 35) 100%);
-
+    --gradient-2: linear-gradient(45deg,rgba(74, 133, 74, 0) 0%, rgba(52, 131, 51, 0.498) 60%, rgba(30, 140, 28, 0.448) 100%);
     --border-secondary: 1px solid var(--color-secondary);
 }
 @font-face {
@@ -72,6 +72,43 @@ section, footer{
     align-items: center;
     margin-top: 4rem;
 }
+footer{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-inline: 2rem;
+    width: -webkit-fill-available;
+    padding-block: 2rem;
+}
+footer i{
+    width: 1.5rem;
+}
+footer::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    left: 5%;
+    top: 0%;
+    width: 90%;
+    height: 0.1rem;
+    background-color: var(--color-secondary);
+    z-index: 999;
+}
+footer a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    transition: all 0.2s;
+    text-decoration: underline !important;
+}
+footer a:hover{
+    background-color: var(--color-bg-gray);
+    box-shadow: 0px 0px 5px 5px var(--color-bg-gray);
+}
 .video-wrapper{
     position: relative;
     margin-block: 3rem;
@@ -133,6 +170,7 @@ i{
     width: 1.25rem;
     background-size: cover;
     background-position: center;
+    aspect-ratio: 1;
 }
 .icon-menu {
     width: 2rem;
@@ -145,6 +183,27 @@ i{
     background-image: url('../icons/chevron.webp');
     background-size: contain;
     background-repeat: no-repeat;
+}
+.icon-mask{
+    background-color: var(--color-brand);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: cover;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: cover;
+}
+.icon-instagram {
+    mask-image: url('../icons/instagram.webp');
+    -webkit-mask-image: url('../icons/instagram.webp');
+}
+.icon-youtube {
+    mask-image: url('../icons/youtube.webp');
+    -webkit-mask-image: url('../icons/youtube.webp');
+}
+.icon-tiktok {
+    mask-image: url('../icons/tiktok.webp');
+    -webkit-mask-image: url('../icons/tiktok.webp');
 }
 .anchor-brand, .brand-font{
     color: var(--color-brand);
@@ -353,4 +412,19 @@ i{
 @keyframes slide-reverse {
     from { transform: translateX(100%); opacity: 0; }
     to { transform: translateX(0); opacity: 1; }
+}
+#hablemos{
+    background: var(--gradient-2);
+    margin-inline: 2rem;
+    border: 1px solid gray;
+}
+#hablemos img{
+    margin-top: 3rem;
+    width: 20%;
+}
+#hablemos .button-cta{
+    margin-block: 3rem;
+}
+#hablemos p{
+    font-weight: 300;
 }
