@@ -7,7 +7,7 @@
     --color-backdrop: #c1c1c1b8;
     --gradient: linear-gradient(45deg,rgb(60, 120, 60) 0%, rgba(22, 148, 19, 1) 50%, rgb(37, 175, 35) 100%);
     --gradient-2: linear-gradient(45deg,rgba(74, 133, 74, 0) 0%, rgba(52, 131, 51, 0.498) 60%, rgba(30, 140, 28, 0.448) 100%);
-    --border-secondary: 1px solid var(--color-secondary);
+    --border-secondary: 0.1rem solid var(--color-secondary);
 }
 @font-face {
     font-family: "Lato";
@@ -133,7 +133,7 @@ video, img{
 }
 #video-muted{
     position: absolute;
-    width: 35%;
+    width: 45%;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
@@ -150,7 +150,10 @@ video, img{
     gap: 0.5rem;
 }
 #video-muted img{
-    width: 60%;
+    width: 50%;
+}
+#video-muted span{
+    text-align: center;
 }
 @keyframes bounce {
     from{
@@ -185,7 +188,7 @@ i{
     background-image: url('../icons/menu.webp');
 }
 .icon-chevron{
-    width: 8rem;
+    width: 4rem;
     aspect-ratio: 0.75;
     background-image: url('../icons/chevron.webp');
     background-size: contain;
@@ -288,6 +291,7 @@ i{
     border-radius: 1rem;
     border: 1px solid white;
     transition: all 0.5s;
+    text-align: center;
 }
 .button-cta:hover{
     box-shadow: 0px 0px 20px 3px var(--color-brand);
@@ -303,7 +307,7 @@ section .button-cta{
 }
 #about{
     padding: 1rem;
-    height: 30svh;
+    min-height: 30svh;
 
     position: relative;
     overflow: hidden;
@@ -351,6 +355,7 @@ section .button-cta{
     text-align: center;
 }
 #clientes{
+    width: 60%;
     margin-inline: 2rem;
 }
 #clientes-headers, .cliente{
@@ -363,10 +368,11 @@ section .button-cta{
 .cliente{
     display: inline-flex;
     align-items: stretch;
-    gap: 1rem;
+    gap: 1.5rem;
     opacity: 0;
 }
 .cliente img{
+    width: 45%;
     border: var(--border-secondary);
 }
 #pat article{
@@ -396,11 +402,11 @@ section .button-cta{
     transform: scaleY(1.03);
 }
 .pat-img:first-of-type::after{
-    right: 0;
+    right: -2%;
     rotate: 180deg;
 }
 .pat-img:last-of-type::after{
-    left: 0;
+    left: -2%;
 }
 #pat article:nth-of-type(2) p{
     position: absolute;
@@ -462,6 +468,32 @@ section .button-cta{
     border-radius: 2rem;
     z-index: 1000;
 }
+@media screen and (max-width: 800px) {
+    #about>div{
+        flex-direction: column !important;
+    }
+    #hablemos{
+        margin-inline: 1rem;
+    }
+    .button-cta{
+        margin: 2rem;
+    }
+    .cliente i{
+        width: 5%;
+        scale: 2;
+    }
+    footer{
+        flex-direction: column;
+    }
+    #whats{
+        bottom: 0;
+        right: 0;
+    }
+    #pat article:nth-of-type(2) p{
+        width: 90%;
+    }
+}
+
 @media screen and (min-width: 1200px){
     #about, #hablemos{
         height: auto;
@@ -471,7 +503,7 @@ section .button-cta{
         width: 80%;
     }
     #clientes{
-        width: 50%;
+        width: 40%;
     }
     header{
         width: 100%;
