@@ -475,6 +475,9 @@ section .button-cta{
     #hablemos{
         margin-inline: 1rem;
     }
+    #hablemos h2{
+        margin: 1.5rem;
+    }
     .button-cta{
         margin: 2rem;
     }
@@ -489,8 +492,18 @@ section .button-cta{
         bottom: 0;
         right: 0;
     }
+    #pat article{
+        flex-direction: column;
+    }
+    .pat-img{
+        width: 100%;
+    }
     #pat article:nth-of-type(2) p{
+        top: 45%;
         width: 90%;
+    }
+    .pat-img:first-of-type::after{
+        inset: unset;
     }
 }
 
