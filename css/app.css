@@ -185,12 +185,12 @@ i{
 .icon-menu {
     width: 2rem;
     aspect-ratio: 1;
-    background-image: url('/icons/menu.webp');
+    background-image: url('/assets/icons/menu.webp');
 }
 .icon-chevron{
     width: 3rem;
     aspect-ratio: 0.75;
-    background-image: url('/icons/chevron.webp');
+    background-image: url('/assets/icons/chevron.webp');
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -204,23 +204,23 @@ i{
     -webkit-mask-size: cover;
 }
 .icon-instagram {
-    mask-image: url('/icons/instagram.webp');
-    -webkit-mask-image: url('/icons/instagram.webp');
+    mask-image: url('/assets/icons/instagram.webp');
+    -webkit-mask-image: url('/assets/icons/instagram.webp');
 }
 .icon-youtube {
-    mask-image: url('/icons/youtube.webp');
-    -webkit-mask-image: url('/icons/youtube.webp');
+    mask-image: url('/assets/icons/youtube.webp');
+    -webkit-mask-image: url('/assets/icons/youtube.webp');
 }
 .icon-tiktok {
-    mask-image: url('/icons/tiktok.webp');
-    -webkit-mask-image: url('/icons/tiktok.webp');
+    mask-image: url('/assets/icons/tiktok.webp');
+    -webkit-mask-image: url('/assets/icons/tiktok.webp');
 }
 .icon-whatsapp{
     background-color: white;
     -webkit-mask-size: contain;
     mask-size: contain;
-    mask-image: url('/icons/ws.webp');
-    -webkit-mask-image: url('/icons/ws.webp');
+    mask-image: url('/assets/icons/ws.webp');
+    -webkit-mask-image: url('/assets/icons/ws.webp');
 }
 .anchor-brand, .brand-font{
     color: var(--color-brand);
