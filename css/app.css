@@ -188,7 +188,7 @@ i{
     background-image: url('../icons/menu.webp');
 }
 .icon-chevron{
-    width: 4rem;
+    width: 3rem;
     aspect-ratio: 0.75;
     background-image: url('../icons/chevron.webp');
     background-size: contain;
@@ -372,8 +372,9 @@ section .button-cta{
     opacity: 0;
 }
 .cliente img{
-    width: 45%;
+    width: 35%;
     border: var(--border-secondary);
+    box-shadow: 0px 0px 20px 3px var(--color-brand-accent);
 }
 #pat article{
     width: 100%;
