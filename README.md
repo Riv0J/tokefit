@@ -1,35 +1,19 @@
 # [tokefit.com](http://tokefit.com)
-
-Este embudo de ventas fue configurado con Apache2.
-
----
+Este embudo de ventas fué configurado con apache2:
 
 ## 1. Subir el proyecto
 
-```bash
-cd /var/www
-git clone <repo>
-```
+- cd /var/www
+- git clone github.com/Riv0J/tokefit
 
----
+## 2. Configurar apache2
 
-## 2. Configurar Apache2
+- apt install apache2
+- cd /etc/apache2/sites-available
+- cp 000-default.conf tokefit.conf
+- nano tokefit.conf
 
-Instalar Apache si no está ya instalado:
-
-```bash
-sudo apt install apache2
-```
-
-Luego, configurar el virtual host:
-
-```bash
-cd /etc/apache2/sites-available
-sudo cp 000-default.conf tokefit.conf
-sudo nano tokefit.conf
-```
-
-Contenido sugerido para `tokefit.conf`:
+En tokefit.conf:
 
 ```apache
 <VirtualHost *:80>
@@ -47,15 +31,9 @@ Contenido sugerido para `tokefit.conf`:
 </VirtualHost>
 ```
 
----
-
 ## 3. Activar el sitio
 
-```bash
-sudo a2dissite 000-default.conf
-sudo a2enmod rewrite
-sudo a2ensite tokefit.conf
-sudo systemctl reload apache2
-```
-
----
+- sudo a2dissite 000-default.conf
+- sudo a2enmod rewrite
+- sudo a2ensite app.conf
+- sudo systemctl reload apache2
