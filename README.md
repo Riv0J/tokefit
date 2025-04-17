@@ -31,9 +31,23 @@ En tokefit.conf:
 </VirtualHost>
 ```
 
+Tarea cron para que apache se inicie si no está activo:
+
+- crontab -e
+
+```apache
+* * * * * systemctl is-active --quiet apache2 || (echo "$(date): Apache2 estaba caído, se inició" >> /var/log/apache_monitor.log && systemctl start apache2)
+```
+
 ## 3. Activar el sitio
 
 - sudo a2dissite 000-default.conf
 - sudo a2enmod rewrite
 - sudo a2ensite app.conf
 - sudo systemctl reload apache2
+
+## 4. Certificado SSL gratuito
+
+Utilizar certificado gratuito de Let's Encrypt, automaticamente renovado por Certbot:
+
+# [https://certbot.eff.org/instructions?ws=apache&os=pip](https://certbot.eff.org/instructions?ws=apache&os=pip)
