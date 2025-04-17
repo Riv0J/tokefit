@@ -2,7 +2,7 @@
     --color-brand: #169413;
     --color-brand-accent: #54BF81;
     --color-secondary: #FFFF88;
-    --color-bg-dark: #000800;
+    --color-bg-dark: #111111;
     --color-bg-gray: #282828;
     --color-backdrop: #c1c1c1b8;
     --gradient: linear-gradient(45deg,rgb(60, 120, 60) 0%, rgba(22, 148, 19, 1) 50%, rgb(37, 175, 35) 100%);
@@ -67,6 +67,10 @@ button{
     height: 0.1rem;
     background-color: var(--color-secondary);
     z-index: 999;
+}
+section{
+    display: flex;
+    flex-direction: column;
 }
 section:not(:first-of-type), footer{
     display: flex;
@@ -133,7 +137,9 @@ video, img{
 }
 #video-muted{
     position: absolute;
-    width: 45%;
+    width: 60%;
+    max-height: 90%;
+    aspect-ratio: 2;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
@@ -154,6 +160,7 @@ video, img{
 }
 #video-muted span{
     text-align: center;
+    font-size: 1.5rem;
 }
 @keyframes bounce {
     from{
@@ -166,9 +173,15 @@ video, img{
 }
 h1{
     font-family: "Lexend";
-    font-weight: 500;
+    font-weight: 600;
     margin-inline: 1rem;
+    font-size: 2rem;
+    letter-spacing: 0.05rem;
     text-align: center;
+}
+h1 span{
+    font-weight: 600;
+    box-shadow: inset 0 -.5em var(--color-brand);
 }
 h2{
     letter-spacing: 0.05rem;
@@ -188,7 +201,7 @@ i{
     background-image: url('/assets/icons/menu.webp');
 }
 .icon-chevron{
-    width: 3rem;
+    width: 1.5rem;
     aspect-ratio: 0.75;
     background-image: url('/assets/icons/chevron.webp');
     background-size: contain;
@@ -288,13 +301,18 @@ i{
     padding-inline: 1rem;
     background-color: var(--color-brand);
     background: var(--gradient);
-    border-radius: 1rem;
-    border: 1px solid white;
+    border-radius: 0.5rem;
+    border: 0.1rem solid white;
     transition: all 0.5s;
     text-align: center;
+    width: -webkit-fill-available;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    margin: 0 auto;
 }
 .button-cta:hover{
-    box-shadow: 0px 0px 20px 3px var(--color-brand);
+    box-shadow: 0px 0px 25px -5px white;
 }
 section .button-cta{
     font-size: 1.5rem;
@@ -351,12 +369,11 @@ section .button-cta{
     font-weight: 300;
 }
 #clientes-section p, #hablemos p{
-    width: 70%;
+    margin-inline: 1rem;
     text-align: center;
 }
 #clientes{
-    width: 60%;
-    margin-inline: 2rem;
+    margin-inline: 1rem;
 }
 #clientes-headers, .cliente{
     margin-top: 4rem;
@@ -368,11 +385,11 @@ section .button-cta{
 .cliente{
     display: inline-flex;
     align-items: stretch;
-    gap: 1.5rem;
+    gap: 1rem;
     opacity: 0;
 }
 .cliente img{
-    width: 35%;
+    width: 40%;
     border: var(--border-secondary);
     box-shadow: 0px 0px 20px 3px var(--color-brand-accent);
 }
@@ -468,6 +485,7 @@ section .button-cta{
     padding-inline: 1rem;
     border-radius: 2rem;
     z-index: 1000;
+    width: auto !important;
 }
 @media screen and (max-width: 800px) {
     #about>div{
@@ -509,6 +527,9 @@ section .button-cta{
 }
 
 @media screen and (min-width: 1200px){
+    .button-cta{
+        width: 50%;
+    }
     #about, #hablemos{
         height: auto;
         width: 60%;
@@ -541,4 +562,7 @@ section .button-cta{
     #responsive-nav a::after,  #responsive-nav::after {
         width: 0 !important;
     }
+}
+.d-none{
+    display: none !important;
 }
