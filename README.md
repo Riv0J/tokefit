@@ -2,6 +2,13 @@
 
 Esta web está siendo servida con apache2, con un certificado de Let's Encrypt:
 
+## 0. Conectar el dominio, con el servidor
+
+Registro A
+- Nombre: @
+- Valor: IP del servidor
+- TTL 3600
+
 ## 1. Subir el proyecto
 
 - cd /var/www
