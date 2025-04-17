@@ -47,6 +47,9 @@ header{
 p{
     font-family: "Lexend";
     font-size: 1.25rem;
+    font-weight: 300;
+    margin-inline: 1rem;
+    text-align: center;
 }
 button{
     border: 0;
@@ -66,6 +69,8 @@ button{
 section{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 section:not(:first-of-type), footer{
     display: flex;
@@ -195,13 +200,6 @@ i{
     aspect-ratio: 1;
     background-image: url('/assets/icons/menu.webp');
 }
-.icon-chevron{
-    width: 1.5rem;
-    aspect-ratio: 0.75;
-    background-image: url('/assets/icons/chevron.webp');
-    background-size: contain;
-    background-repeat: no-repeat;
-}
 .icon-mask{
     background-color: var(--color-brand);
     mask-repeat: no-repeat;
@@ -263,7 +261,7 @@ i{
     font-size: 1.25rem;
     font-weight: 600;
     letter-spacing: 0.05rem;
-    margin: 0 auto;
+    margin: 2rem;
 }
 .button-cta:hover{
     box-shadow: 0px 0px 25px -5px white;
@@ -319,21 +317,19 @@ section .button-cta{
     padding: 1rem;
     text-align: center;
 }
-#clientes-section p{
-    font-weight: 300;
-}
-#clientes-section p, #hablemos p{
-    margin-inline: 1rem;
-    text-align: center;
+#exp{
+    padding-bottom: 3rem;
+    border: 0.1rem solid gray;
+    border-radius: 1rem;
 }
 #clientes{
     margin-inline: 1rem;
 }
 #clientes-headers, .cliente{
     margin-top: 4rem;
-    width: 100%;
     display: flex;
     flex-direction: row;
+    width: 100%;
     justify-content: space-around;
 }
 .cliente{
@@ -342,10 +338,14 @@ section .button-cta{
     gap: 1rem;
     opacity: 0;
 }
-.cliente img{
-    width: 40%;
+.cliente img:not(.chevron){
+    width: 45%;
     border: var(--border-secondary);
     box-shadow: 0px 0px 20px 3px var(--color-brand-accent);
+}
+.chevron{
+    object-fit: contain;
+    width: 5%;
 }
 #pat article{
     width: 100%;
@@ -451,9 +451,6 @@ section .button-cta{
     #hablemos h2{
         margin: 1.5rem;
     }
-    .button-cta{
-        margin: 2rem;
-    }
     .cliente i{
         width: 5%;
         scale: 2;
@@ -488,11 +485,14 @@ section .button-cta{
         height: auto;
         width: 60%;
     }
+    #exp p{
+        width: 60%;
+    }
     section{
         width: 80%;
     }
     #clientes{
-        width: 40%;
+        width: 50%;
     }
     header{
         width: 100%;
