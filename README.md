@@ -1,5 +1,6 @@
 # [tokefit.com](http://tokefit.com)
-Este embudo de ventas fué configurado con apache2:
+
+Esta web está siendo servida con apache2, con un certificado de Let's Encrypt:
 
 ## 1. Subir el proyecto
 
@@ -18,10 +19,10 @@ En tokefit.conf:
 ```apache
 <VirtualHost *:80>
     ServerAdmin admin@example.com
-    ServerName example.com
-    DocumentRoot /var/www/app/
+    ServerName tokefit.com
+    DocumentRoot /var/www/tokefit/
 
-    <Directory /var/www/app/>
+    <Directory /var/www/tokefit/>
         AllowOverride All
         Require all granted
     </Directory>
@@ -50,4 +51,4 @@ Tarea cron para que apache se inicie si no está activo:
 
 Utilizar certificado gratuito de Let's Encrypt, automaticamente renovado por Certbot:
 
-# [https://certbot.eff.org/instructions?ws=apache&os=pip](https://certbot.eff.org/instructions?ws=apache&os=pip)
+# [Instrucciones de Certbot](https://certbot.eff.org/instructions?ws=apache&os=pip)
