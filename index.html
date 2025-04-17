@@ -11,16 +11,9 @@
 </head>
 <body>
     <header>
-        <div id="header-wrapper">
+        <div id="header-wrapper" class="flex-center">
             <a class="anchor-brand" href="tokefit.com">Toke<span>fit</span></a>
-            <button id="responsive-menu"><i class="icon-menu"></i></button>
         </div>
-        <nav id="responsive-nav">
-            <a href="#about">Mi historia</a>
-            <a href="#clientes">Mis clientes</a>
-            <a href="#pat">Plan adaptado a ti</a>
-            <a href="#hablemos">Hablemos</a>
-        </nav>
     </header>
     <main class="flex-center">
         <section>
@@ -152,34 +145,6 @@
     </footer>
 </body>
 <script>
-    document.querySelectorAll('#responsive-nav a').forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            const targetId = this.getAttribute('href');
-            const target = document.querySelector(targetId);
-            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-
-            window.scrollTo({
-            top: targetPosition - 100,
-            behavior: 'smooth'
-            });
-            
-            if(document.querySelector('#responsive-menu').style.display !== ""){
-                setTimeout(() => {
-                document.querySelector('#responsive-nav').style.height = '0px';
-                }, 300);
-            }
-        });
-    });
-
-    document.querySelector('#responsive-menu').addEventListener('click', function(){
-        const nav = document.querySelector('#responsive-nav');
-        const height = window.getComputedStyle(nav).height;
-
-        nav.style.height = height === '0px' || height === '' ? nav.scrollHeight + 'px' : '0px';
-    });
-
     const video = document.querySelector('#vsl');
     video.addEventListener('click', function () {
         if (video.muted == false){ return }
