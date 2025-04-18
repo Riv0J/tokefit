@@ -36,6 +36,7 @@ main{
     position: relative;
 }
 body{
+    overflow-x: hidden;
     background-color: var(--color-bg-dark);
 }
 header{
