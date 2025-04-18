@@ -284,39 +284,6 @@ section .button-cta{
     z-index: 1;
     gap: 3rem;
 }
-#about::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url('../assets/weight2.webp');
-    background-size: cover;
-    background-position: center;
-    filter: blur(1px);
-    transform: scale(1.1);
-    z-index: -1;
-}
-#about span{
-    font-family: "Lato Italic";
-}
-#about div{
-    margin-inline: 2rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-}
-#about img{
-    width: 70%;
-    border: var(--border-secondary);
-}
-#about p{
-    font-size: 1.25rem;
-    letter-spacing: 0.05rem;
-    line-height: 1.5;
-    padding: 1rem;
-    text-align: center;
-}
 #exp{
     padding-bottom: 3rem;
     border: 0.1rem solid gray;
