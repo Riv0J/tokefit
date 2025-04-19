@@ -125,8 +125,7 @@ footer a:hover{
     position: relative;
     margin-block: 3rem;
     cursor: pointer;
-    border: 0.1rem solid var(--color-brand);
-    scale: 1.05;
+    border-block: 0.1rem solid var(--color-brand);
 }
 video, img{
     width: 100%;
@@ -161,6 +160,7 @@ video, img{
     object-fit: contain;
 }
 #video-muted span{
+    text-wrap: nowrap;
     text-align: center;
     font-size: 1.5rem;
 }

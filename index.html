@@ -18,18 +18,17 @@
     
     <main class="flex-center">
         <section>
-            <h1>COMO <span>CONSEGUIR UN CUERPO FUERTE Y DEFINIDO</span> SIN DIETAS RESTRICTIVAS NI ESTAR ENTRENANDO DURANTE HORAS
-                <span>(SOLO 3 MINUTOS)</span></h1>
-                <h1><span>CONSIGUE UN CUERPO FUERTE Y DEFINIDO</span> SIN DIETAS RESTRICTIVAS NI ENTRENOS LARGOS
-                    <span>(SOLO 3 MINUTOS)</span></h1>
+            <h1>
+                <span>CONSIGUE UN CUERPO FUERTE Y DEFINIDO</span> SIN DIETAS RESTRICTIVAS NI ENTRENOS LARGOS
+                <span>(SOLO 3 MINUTOS)</span>
+            </h1>
             <div class="video-wrapper">
-                <video id="vsl" src="assets/vsl.mp4" autoplay playsinline muted></video>
+                <video src="assets/vsl.mp4" autoplay playsinline muted></video>
                 <div id="video-muted">
                     <span>Haz click para escuchar</span>
                     <img src="assets/unmute.gif" alt="">
                     <span>Tu cambio físico te espera</span>
                 </div>
-                <div id="video-fullscreen"></div>
             </div>
             <h2>¡Entrenando poco y con tus comidas favoritas!</h2>
             <a class="button-cta" href="https://wa.pe/tokefit" target="_blank">Comienza tu plan de pérdida de grasa</a>
@@ -61,35 +60,35 @@
                         <img class="chevron" src="assets/icons/chevron.webp" alt="Flecha >">
                         <img src="assets/cambios/c1_2.webp" alt="Miguel después">
                     </div>
-                    <p>Miguel ha COMPLETADO SU DEFINICIÓN, perdiendo x kilos en x meses</p>
+                    <p>Miguel ha COMPLETADO SU DEFINICIÓN, perdiendo 10 kilos en 3 meses</p>
 
                     <div class="cliente">
                         <img src="assets/cambios/c2_1.webp" alt="Fernando antes">
                         <img class="chevron" src="assets/icons/chevron.webp" alt="Flecha >">
                         <img src="assets/cambios/c2_2.webp" alt="Fernando después">
                     </div>
-                    <p>Fernando ha realizado una GRAN RECOMPOSICIÓN, perdiendo x kilos en x meses</p>
+                    <p>Fernando ha realizado una GRAN RECOMPOSICIÓN, perdiendo 12 kilos en 3 meses</p>
 
                     <div class="cliente">
                         <img src="assets/cambios/c3_1.webp" alt="Jon antes">
                         <img class="chevron" src="assets/icons/chevron.webp" alt="Flecha >">
                         <img src="assets/cambios/c3_2.webp" alt="Jon después">
                     </div>
-                    <p>Jon ha PERDIDO SU BARRIGA, diciendo adiós a x kilos en x meses</p>
+                    <p>Jon ha PERDIDO SU BARRIGA, diciendo adiós a 12 kilos en 3 meses</p>
 
                     <div class="cliente">
                         <img src="assets/cambios/c5_1.webp" alt="Noelia antes">
                         <img class="chevron" src="assets/icons/chevron.webp" alt="Flecha >">
                         <img src="assets/cambios/c5_2.webp" alt="Noelia después">
                     </div>
-                    <p>Noelia ha TONIFICADO SU FIGURA, perdiendo x kilos en x meses</p>
+                    <p>Noelia ha TONIFICADO SU FIGURA, perdiendo 10 kilos en 3 meses</p>
 
                     <div class="cliente">
                         <img src="assets/cambios/c4_1.webp" alt="Marcos antes">
                         <img class="chevron" src="assets/icons/chevron.webp" alt="Flecha >">
                         <img src="assets/cambios/c4_2.webp" alt="Marcos después">
                     </div>
-                    <p>Marcos ha MEJORADO su definición y ha perdido x kilos en x meses</p>
+                    <p>Marcos ha MEJORADO su definición y ha perdido 8 kilos en 3 meses</p>
 
                 </div>
             </div>
@@ -143,13 +142,17 @@
     </footer>
 </body>
 <script>
-    const video = document.querySelector('#vsl');
+    const video = document.querySelector('video');
     video.addEventListener('click', function () {
         if (video.muted == false){ return }
-        document.querySelector('#video-muted').style.display = "none";
-        video.currentTime = 0;
-        video.muted = false;
-        video.play();
+        video.controls = true;
+
+        setTimeout(() => {
+            document.querySelector('#video-muted').style.display = "none";
+            video.currentTime = 0;
+            video.muted = false;
+            video.play();
+        },100)
     });
 
     document.addEventListener('DOMContentLoaded', function () {
