@@ -1,7 +1,8 @@
 :root{
     --color-brand: #169413;
     --color-brand-accent: #54BF81;
-    --color-secondary: #FFFF88;
+    /* --color-secondary: #FFFF88; */
+    --color-secondary: #c1c1c1b8;
     --color-bg-dark: #111111;
     --color-bg-gray: #282828;
     --color-backdrop: #c1c1c1b8;
@@ -184,7 +185,7 @@ h1{
 h1 span{
     font-family: "Oswald";
     font-weight: 500;
-    box-shadow: inset 0 -.5em var(--color-brand);
+    box-shadow: inset 0 -0.7em var(--color-brand);
 }
 h2{
     letter-spacing: 0.05rem;
@@ -291,6 +292,9 @@ section .button-cta{
     padding-bottom: 3rem;
     border: 0.1rem solid gray;
     border-radius: 1rem;
+    margin-inline: 1rem;
+    padding: 0.5rem;
+    padding-bottom: 1.5rem;
 }
 #clientes{
     margin-inline: 1rem;
@@ -311,7 +315,8 @@ section .button-cta{
 .cliente img:not(.chevron){
     width: 45%;
     border: var(--border-secondary);
-    box-shadow: 0px 0px 20px 3px var(--color-brand-accent);
+    /* box-shadow: 0px 0px 20px 3px var(--color-brand-accent); */
+    /* box-shadow: 0px 0px 20px 2px whitesmoke; */
 }
 .chevron{
     object-fit: contain;
@@ -382,6 +387,7 @@ section .button-cta{
     to { transform: translateX(0); opacity: 1; }
 }
 #hablemos{
+    border-radius: 1rem;
     background: var(--gradient-2);
     margin-inline: 2rem;
     border: 1px solid gray;
