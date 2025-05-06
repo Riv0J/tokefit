@@ -419,8 +419,8 @@ section .button-cta{
     width: auto !important;
 }
 @media screen and (max-width: 800px) {
-    #about>div{
-        flex-direction: column !important;
+    #clientes{
+        overflow-x: hidden;
     }
     #hablemos{
         margin-inline: 1rem;
