@@ -164,22 +164,41 @@
     </footer>
 </body>
 <script>
+    window.dataLayer = window.dataLayer || [];
     const video = document.querySelector('video');
+
+    let hasSent30PercentEvent = false;
+    
+    video.addEventListener('timeupdate', function () {
+        const percentage = (video.currentTime / video.duration) * 100;
+
+        if (!hasSent30PercentEvent && percentage >= 30) {
+            hasSent30PercentEvent = true;
+
+            window.dataLayer.push({
+                event: "video_view_30_percent"
+            });
+
+            console.log("Evento 30% enviado");
+        }
+    });
+
     video.addEventListener('click', function () {
         video.controls = false;
-        if(video.paused == false){
+
+        if (video.paused == false) {
             video.pause();
         } else {
             video.play();
         }
 
-        if (video.muted == true){ 
+        if (video.muted == true) {
             setTimeout(() => {
-            document.querySelector('#video-muted').style.display = "none";
-            video.currentTime = 0;
-            video.muted = false;
-            video.play();
-        },100);
+                document.querySelector('#video-muted').style.display = "none";
+                video.currentTime = 0;
+                video.muted = false;
+                video.play();
+            }, 100);
         }
     });
 
