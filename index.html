@@ -167,19 +167,26 @@
     window.dataLayer = window.dataLayer || [];
     const video = document.querySelector('video');
 
-    let hasSent30PercentEvent = false;
-    
+    let sent30PercentEvent = false;
+    let sent80PercentEvent = false;
+
     video.addEventListener('timeupdate', function () {
         const percentage = (video.currentTime / video.duration) * 100;
 
-        if (!hasSent30PercentEvent && percentage >= 30) {
-            hasSent30PercentEvent = true;
-
+        if (!sent30PercentEvent && percentage >= 30) {
+            sent30PercentEvent = true;
             window.dataLayer.push({
                 event: "video_view_30_percent"
             });
-
             console.log("Evento 30% enviado");
+        }
+
+        if (!sent80PercentEvent && percentage >= 80) {
+            sent80PercentEvent = true;
+            window.dataLayer.push({
+                event: "video_view_80_percent"
+            });
+            console.log("Evento 80% enviado");
         }
     });
 
