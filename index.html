@@ -53,7 +53,7 @@
                 </div>
             </div>
             <h2>¡Entrenando poco y con tus comidas favoritas!</h2>
-            <a class="button-cta" href="https://wa.pe/tokefit" target="_blank">Comienza tu plan de pérdida de grasa</a>
+            <a class="button-cta button-wa" target="_blank">Comienza tu plan de pérdida de grasa</a>
         </section>
 
         <section id="exp">
@@ -114,7 +114,7 @@
 
                 </div>
             </div>
-            <a class="button-cta" href="https://wa.pe/tokefit" target="_blank">Sé el siguiente en dar el paso</a>
+            <a class="button-cta button-wa" target="_blank">Sé el siguiente en dar el paso</a>
         </section>
 
         <section id="pat">
@@ -132,7 +132,7 @@
                 <p>Significa incluir ejercicios y una buena nutrición a tu rutina diaria, entrenando eficientemente y comiendo lo que te gusta</p>
             </article>
 
-            <a class="button-cta" href="https://wa.pe/tokefit" target="_blank">Escríbeme para obtener tu propio plan</a>
+            <a class="button-cta button-wa" target="_blank">Escríbeme para obtener tu propio plan</a>
 
         </section>
 
@@ -143,7 +143,7 @@
             <a class="button-cta" href="https://calendly.com/tornikefit/45min" target="_blank">RECLAMA tu reunión GRATUITA</a>
         </section>
 
-        <a id="whats" class="button-cta" href="https://wa.pe/tokefit" target="_blank">
+        <a id="whats" class="button-cta button-wa" target="_blank">
             <i class="icon-mask icon-whatsapp"></i>
             Hablemos
         </a>
@@ -233,12 +233,29 @@
 
 document.addEventListener("DOMContentLoaded", event => {
     const params = new URLSearchParams(window.location.search);
-    const social = params.get('s');
-    
+    const s = params.get('s');
+    const trans = {'ig':'Instagram'}
+    const social = s ? (trans[s] || s) : "tu web";
+
+    //enviar visita a analytics
     window.dataLayer.push({
         event: 'visit',
         social: social
     });
+    
+    //modificar mensaje de whats
+    const number = '34688710846';
+    const message = encodeURIComponent(`
+    Hola Toke! Vengo desde ${social}, me llamo __ , tengo __ años y me pongo en contacto contigo porque __`
+    );
+    const url = `https://wa.me/${number}?text=${message}`;
+    // window.open(url, '_blank');
+    
+    document.querySelectorAll('.button-wa').forEach(butt=>{
+        butt.addEventListener("click", ()=>{
+            window.open(url, '_blank')
+        });
+    })
     console.log('Origen social:', social);
 });
 </script>
