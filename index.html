@@ -229,5 +229,17 @@
 
     clientes.forEach(cliente => observer.observe(cliente));
 });
+
+
+document.addEventListener("DOMContentLoaded", event => {
+    const params = new URLSearchParams(window.location.search);
+    const social = params.get('s');
+    
+    window.dataLayer.push({
+        event: 'visit',
+        social: social
+    });
+    console.log('Origen social:', social);
+});
 </script>
 </html>
