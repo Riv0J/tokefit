@@ -115,9 +115,9 @@
     mask-image: url('/assets/icons/v-expand.svg');
     -webkit-mask-image: url('/assets/icons/v-expand.svg');
 }
-.icon-minimize{
+.icon-compress{
     background-color: white;
-    mask-image: url('/assets/icons/v-minimize.svg');
-    -webkit-mask-image: url('/assets/icons/v-minimize.svg');
+    mask-image: url('/assets/icons/v-compress.svg');
+    -webkit-mask-image: url('/assets/icons/v-compress.svg');
 }
 

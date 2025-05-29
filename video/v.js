@@ -57,7 +57,7 @@ function toggle_expand() {
             });
         }
 
-        expand_i.classList.remove('icon-minimize');
+        expand_i.classList.remove('icon-compress');
         expand_i.classList.add('icon-expand');
 
     } else {
@@ -70,6 +70,6 @@ function toggle_expand() {
         }
 
         expand_i.classList.remove('icon-expand');
-        expand_i.classList.add('icon-minimize');
+        expand_i.classList.add('icon-compress');
     }
 }
