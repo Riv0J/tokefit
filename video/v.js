@@ -66,7 +66,15 @@ function toggle_expand() {
                         wrap.msRequestFullscreen;
 
         if (request) {
-            request.call(wrap);
+            request.call(wrap).then(() => {
+                try {
+                    if (screen.orientation && screen.orientation.lock) {
+                        screen.orientation.lock('landscape');
+                    }
+                } catch (err) {
+                    console.warn('No se pudo bloquear la orientación:', err);
+                }
+            });
         }
 
         expand_i.classList.remove('icon-expand');
