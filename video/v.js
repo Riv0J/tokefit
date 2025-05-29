@@ -39,7 +39,7 @@ function toggle_video() {
     }
 }
 function toggle_expand() {
-    const wrap = document.querySelector('.video-wrapper');
+    const player = document.querySelector('#v-player');
     const expand_i = document.querySelector('#v-expand i');
 
     const isFullscreen = document.fullscreenElement || 
@@ -53,7 +53,7 @@ function toggle_expand() {
 
         if (exit) {
             exit.call(document).then(() => {
-                wrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                player.scrollIntoView({ behavior: 'smooth', block: 'center' });
             });
         }
 
@@ -61,12 +61,12 @@ function toggle_expand() {
         expand_i.classList.add('icon-expand');
 
     } else {
-        const request = wrap.requestFullscreen || 
-                        wrap.webkitRequestFullscreen || 
-                        wrap.msRequestFullscreen;
+        const request = player.requestFullscreen || 
+                        player.webkitRequestFullscreen || 
+                        player.msRequestFullscreen;
 
         if (request) {
-            request.call(wrap).then(() => {
+            request.call(player).then(() => {
                 try {
                     if (screen.orientation && screen.orientation.lock) {
                         screen.orientation.lock('landscape');

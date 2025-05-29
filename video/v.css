@@ -1,7 +1,7 @@
 :root{
     --v-controls-bg: rgba(0, 0, 0, 0.25);
 }
-.video-wrapper, .video-wrapper *{
+#v-player, #v-player *{
     user-select: none;
 }
 #v-muted{
