@@ -26,6 +26,7 @@
     <link rel="shortcut icon" href="tokefit.webp" type="image/x-icon">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/app.css?v=1">
+    <link rel="stylesheet" href="video/v.css?v=1">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -46,10 +47,22 @@
             </h1>
             <div class="video-wrapper">
                 <video src="assets/vsl.mp4" autoplay playsinline muted></video>
-                <div id="video-muted">
+                <div id="v-muted">
                     <span>Haz click para escuchar</span>
                     <img src="assets/unmute.gif" alt="Quitar mute">
                     <span>Tu cambio físico te espera</span>
+                </div>
+                <div id="v-icon">
+                    <i class="icon-mask"></i>
+                </div>
+                
+                <div id="v-controls">
+                    <button id="v-play">
+                        <i class="icon-mask icon-pause"></i>
+                    </button>
+                    <button id="v-expand">
+                        <i class="icon-mask icon-expand"></i>
+                    </button>
                 </div>
             </div>
             <h2>¡Entrenando poco y con tus comidas favoritas!</h2>
@@ -166,7 +179,6 @@
 <script>
     window.dataLayer = window.dataLayer || [];
     const video = document.querySelector('video');
-
     const percents = [10,20,30,40,50,60,70,80,90,100];
     const sent = [];
     video.addEventListener('timeupdate', function () {
@@ -182,31 +194,7 @@
             sent.push(percentage);
         }
     });
-
-    video.addEventListener('click', function () {
-        video.controls = false;
-
-        if (video.paused == false) {
-            video.pause();
-        } else {
-            video.play();
-        }
-
-        if (video.muted == true) {
-            setTimeout(() => {
-                document.querySelector('#video-muted').style.display = "none";
-                video.currentTime = 0;
-                video.muted = false;
-                video.play();
-
-                window.dataLayer.push({
-                    event: `video_start`
-                });
-                console.log(`Video iniciado`);
-            }, 100);
-        }
-    });
-
+    
     document.addEventListener('DOMContentLoaded', function () {
         const clientes = document.querySelectorAll('.cliente');
 
@@ -231,7 +219,6 @@
 
     clientes.forEach(cliente => observer.observe(cliente));
 });
-
 
 document.addEventListener("DOMContentLoaded", event => {
     const params = new URLSearchParams(window.location.search);
@@ -268,4 +255,5 @@ document.addEventListener("DOMContentLoaded", event => {
     console.log('Origen social:', social);
 });
 </script>
+<script src="video/v.js"></script>
 </html>

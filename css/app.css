@@ -127,6 +127,7 @@ footer a:hover{
     margin-block: 3rem;
     cursor: pointer;
     border-block: 0.1rem solid var(--color-brand);
+    display: flex;
 }
 video, img{
     width: 100%;
@@ -138,41 +139,6 @@ video, img{
     box-shadow: inset 0px 0px 20px 20px rgba(0,0,0,0.75);
     z-index: 999;
     pointer-events: none;
-}
-#video-muted{
-    position: absolute;
-    max-height: 90%;
-    inset: 10%;
-    background-color: rgba(128, 128, 128, 0.529);
-    border: 0.1rem solid rgb(171, 171, 171);
-    border-radius: 1rem;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    animation: 1s bounce ease-in-out  alternate infinite;
-    pointer-events: none;
-    font-size: 1.25rem;
-    gap: 0.5rem;
-}
-#video-muted img{
-    height: 50%;
-    object-fit: contain;
-}
-#video-muted span{
-    text-wrap: nowrap;
-    text-align: center;
-    font-size: 1.5rem;
-}
-@keyframes bounce {
-    from{
-        scale: 1;
-    }
-    to{
-        scale: 0.9;
-    }
-    
 }
 h1{
     font-family: "Oswald";
@@ -227,8 +193,8 @@ i{
 }
 .icon-whatsapp{
     background-color: white;
-    -webkit-mask-size: contain;
     mask-size: contain;
+    -webkit-mask-size: contain;
     mask-image: url('/assets/icons/ws.webp');
     -webkit-mask-image: url('/assets/icons/ws.webp');
 }

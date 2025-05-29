@@ -1,0 +1,123 @@
+:root{
+    --v-controls-bg: rgba(0, 0, 0, 0.25);
+}
+.video-wrapper *{
+    user-select: none;
+}
+#v-muted{
+    position: absolute;
+    max-height: 90%;
+    inset: 10%;
+    background-color: rgba(128, 128, 128, 0.529);
+    border: 0.1rem solid rgb(171, 171, 171);
+    border-radius: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    animation: 1s bounce ease-in-out alternate infinite;
+    pointer-events: none;
+    font-size: 1.25rem;
+    gap: 0.5rem;
+}
+#v-muted img{
+    height: 50%;
+    object-fit: contain;
+}
+#v-muted span{
+    text-wrap: nowrap;
+    text-align: center;
+    font-size: 1.5rem;
+}
+@keyframes bounce {
+    from{
+        scale: 1;
+    }
+    to{
+        scale: 0.9;
+    }
+}
+#v-controls{
+    position: absolute; inset: 0; top: unset;
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.5s;
+    pointer-events: none;
+}
+#v-controls.visible{
+    opacity: 1;
+}
+#v-controls button{
+    opacity: 0.7;
+    transition: all 0.25s;
+    aspect-ratio: 1;
+    border-radius: 0.25rem;
+    pointer-events: all;
+}
+#v-controls button:hover{
+    opacity: 1;
+    transform: scale(1.2);
+    background-color: var(--v-controls-bg);
+}
+#v-controls i{
+    width: 2rem !important;
+}
+/* ICONS */
+#v-icon{
+    opacity: 0;
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15%;
+    pointer-events: none;
+    transition: all 0.25s ease-in;
+    background-color: var(--v-controls-bg);
+    place-content: center;
+    place-items: center;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+#v-icon.paused{
+    opacity: 0.7;
+}
+#v-icon i{
+    width: 60%;
+    background-color: white;
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    mask-image: url('/assets/icons/v-pause.svg');
+    -webkit-mask-image: url('/assets/icons/v-pause.svg');
+}
+#v-icon.paused i{
+    mask-image: url('/assets/icons/v-play.svg');
+    -webkit-mask-image: url('/assets/icons/v-play.svg');
+    transform: translateX(10%);
+}
+.icon-play{
+    background-color: white;
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    mask-image: url('/assets/icons/v-play.svg');
+    -webkit-mask-image: url('/assets/icons/v-play.svg');
+}
+.icon-pause{
+    background-color: white;
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    mask-image: url('/assets/icons/v-pause.svg');
+    -webkit-mask-image: url('/assets/icons/v-pause.svg');
+}
+.icon-expand{
+    background-color: white;
+    mask-image: url('/assets/icons/v-expand.svg');
+    -webkit-mask-image: url('/assets/icons/v-expand.svg');
+}
+.icon-minimize{
+    background-color: white;
+    mask-image: url('/assets/icons/v-minimize.svg');
+    -webkit-mask-image: url('/assets/icons/v-minimize.svg');
+}
+
